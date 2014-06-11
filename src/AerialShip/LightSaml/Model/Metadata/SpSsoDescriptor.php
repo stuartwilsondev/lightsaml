@@ -35,7 +35,8 @@ class SpSsoDescriptor extends SSODescriptor
     public function addService(AbstractService $service) {
         $class = Helper::getClassNameOnly($service);
         if ($class != 'SingleLogoutService' &&
-            $class != 'AssertionConsumerService'
+            $class != 'AssertionConsumerService' &&
+            $class != 'AttributeConsumerService'
         ) {
             throw new \InvalidArgumentException("Invalid service type $class for SPSSODescriptor");
         }
